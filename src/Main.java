@@ -15,34 +15,33 @@ public class Main {
             System.out.println("Inserisci il titolo di: " + tipo +" numero "+(i+1));
             String titolo = scannermultimediale.nextLine();
 
-            if (tipo.equals("audio")){
-                System.out.println("Inserisci la durata:");
-                int durata = scannermultimediale.nextInt();
-                System.out.println("Inserisci il volume:");
-                int volume = scannermultimediale.nextInt();
-                scannermultimediale.nextLine();
-                elementi[i] = new Audio(titolo, durata, volume);
+            switch (tipo.toLowerCase()) {
+                case "audio" -> {
+                    System.out.println("Inserisci la durata:");
+                    int durata = scannermultimediale.nextInt();
+                    System.out.println("Inserisci il volume:");
+                    int volume = scannermultimediale.nextInt();
+                    scannermultimediale.nextLine();
+                    elementi[i] = new Audio(titolo, durata, volume);
+                }
+                case "video" -> {
+                    System.out.println("Inserisci la durata:");
+                    int durata = scannermultimediale.nextInt();
+                    System.out.println("Inserisci il volume:");
+                    int volume = scannermultimediale.nextInt();
+                    System.out.println("Inserisci la luminosità:");
+                    int luminosita = scannermultimediale.nextInt();
+                    scannermultimediale.nextLine();
+                    elementi[i] = new Video(titolo, durata, volume, luminosita);
+                }
+                case "immagine" -> {
+                    System.out.println("Inserisci la luminosità:");
+                    int luminosita = scannermultimediale.nextInt();
+                    scannermultimediale.nextLine();
+                    elementi[i] = new Immagine(titolo, luminosita);
+                }
+                default -> System.out.println("tipo inserito sbagliato");
             }
-
-            else if (tipo.equals("video")){
-                System.out.println("Inserisci la durata:");
-                int durata = scannermultimediale.nextInt();
-                System.out.println("Inserisci il volume:");
-                int volume = scannermultimediale.nextInt();
-                System.out.println("Inserisci la luminosità:");
-                int luminosita = scannermultimediale.nextInt();
-                scannermultimediale.nextLine();
-                elementi[i] = new Video(titolo, durata, volume, luminosita);
-            }
-
-            else if (tipo.equals("immagine")){
-                System.out.println("Inserisci la luminosità:");
-                int luminosita = scannermultimediale.nextInt();
-                scannermultimediale.nextLine();
-                elementi[i] = new Immagine(titolo, luminosita);
-            }
-
-            else {System.out.println("tipo inserito sbagliato");}
 
         }
 
