@@ -1,8 +1,8 @@
 package Entities;
 
-import Interfaces.Luminosità;
+import Interfaces.Luminosita;
 
-public class Immagine extends ElementoMultimediale implements Luminosità {
+public class Immagine extends ElementoMultimediale implements Luminosita {
     public int luminosita;
     public Immagine(String titolo, int luminosita) {
         super(titolo);
@@ -10,7 +10,7 @@ public class Immagine extends ElementoMultimediale implements Luminosità {
     }
 
     @Override
-    public void piuLuminosità() {
+    public void piuLuminosita() {
         if (luminosita < 10) {
             luminosita++;
             System.out.println("luminosità aumentata" + luminosita);
@@ -19,7 +19,7 @@ public class Immagine extends ElementoMultimediale implements Luminosità {
         }
     }
     @Override
-    public void menoLuminosità() {
+    public void menoLuminosita() {
         if (luminosita > 0) {
             luminosita--;
             System.out.println("luminosità diminuita" + luminosita);
