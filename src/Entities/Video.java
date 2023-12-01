@@ -16,20 +16,28 @@ public class Video extends ElementoMultimediale implements Play{
     }
 
     @Override
-    public String getTitle() {
-        return titolo;
+    public void play() {
+        { System.out.println("Play canzone "+ getTitle());
+        }
     }
 
     @Override
-    public int getDurata() {
-        return durata;
+    public void piuVolume() {
+        if (volume < 10) {
+            volume++;
+            System.out.println("piu volume " + volume);
+        } else {
+            System.out.println("max volume");
+        }
     }
 
-    public void aumentaLuminosita() {
-        // Implementazione aumentaLuminosita()
-    }
-
-    public void diminuisciLuminosita() {
-        // Implementazione diminuisciLuminosita()
+    @Override
+    public void menoVolume() {
+        if (volume > 0) {
+            volume--;
+            System.out.println("Volume abbassato " + volume);
+        } else {
+            System.out.println("min volume");
+        }
     }
 }

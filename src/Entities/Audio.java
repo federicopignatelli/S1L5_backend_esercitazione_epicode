@@ -40,6 +40,6 @@ public class Audio extends ElementoMultimediale implements Play {
 
     @Override
     public String toString() {
-        return "Title: " + getTitle() + ", Volume: " + volume + ", Durata: " + durata;
+        return "Title: " + getTitle() + ", Durata: " + durata + ", Volume: " + volume;
     }
 }
